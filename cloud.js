@@ -39,3 +39,6 @@ AV.Cloud.afterSave('Comment', function (request) {
         console.warn('好像 @ 了一个不存在的人!');
     });
 });
+AV.Cloud.define('Sleep_Preventer', function(request){
+    console.log('启动定时函数',new Date().toUTCString());
+});
