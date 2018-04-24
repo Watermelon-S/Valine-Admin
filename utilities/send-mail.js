@@ -49,13 +49,12 @@ exports.send = (currentComment, parentComment)=> {
         '    </span>您('
         + parentComment.get('nick')
         + ')在<a style="text-decoration:none;color: #12ADDB;" href="'  + process.env.SITE_URL+ currentComment.get('url') + '" target="_blank">《' + process.env.SITE_NAME + '》</a>上的评论有了新的回复</h2> '
-        + '你的评论'
         + '<div style="padding:0 12px 0 12px;margin-top:18px"><p>你的评论：</p><div style="background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;">'
         + parentComment.get('comment')
         + '</div><p><strong>'
         + currentComment.get('nick')
         +'</strong>&nbsp;回复说：</p><div style="background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;">'
-        + currentComment.get('comment')
+        + currentComment.get('comment').replace(/<a.*?a>/ig,"")
         + '</div>'
         + '<p>您可以点击 <a style="text-decoration:none; color:#12addb" href="'
         + process.env.SITE_URL + currentComment.get('url')
