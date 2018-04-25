@@ -40,5 +40,5 @@ AV.Cloud.afterSave('Comment', function (request) {
     });
 });
 AV.Cloud.define('Sleep_Preventer', function(request){
-    console.log('启动定时函数',new Date().toUTCString());
+    console.log('启动定时函数',new Date(Date.now() + (8 * 60 * 60 * 1000)).toUTCString());
 });
